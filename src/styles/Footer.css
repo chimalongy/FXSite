@@ -1,0 +1,94 @@
+.Footer{
+    width: 100%;
+    background: var(--ligtgray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container{
+    max-width: 1084px;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.layer1{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.layer1>div{
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 1rem;
+}
+
+.layer1>div>h3{
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    gap:0.8rem;
+}
+.socials{
+    display: flex;
+    gap:1.2rem;
+    font-size: 2.5rem;
+}
+
+.socials:hover{
+    color:var(--orange);
+}
+
+.layer2, .layer3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.layer2>p, .layer3>p{
+    font-weight: bold;
+}
+.layer3{
+    gap:2rem;
+    padding: 1rem;
+}
+
+.risk-warning{
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+@media screen and (max-width:640px) {
+    .layer1{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .layer1>*{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+
+    }
+
+     .left{
+        
+        padding: 0rem;
+        
+    }
+
+    h4{
+        font-size: 1rem;
+    }
+}

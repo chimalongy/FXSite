@@ -1,0 +1,15 @@
+/* Chatbot.css */
+
+/* Style the chatbot toggle button */
+.chatbot-toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  

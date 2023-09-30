@@ -1,13 +1,147 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: var(--black);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root
+{
+  --yellow: #F5C32C;
+    --orange : #d14d10;
+    --black : #242D49;
+    --ligtgray:#8d95a5;
+    --gray : #4e5361;
+    --blueCard : #DDF8FE;
+    --purple: rgb(238 210 255);
+    --boxShadow : 0px 5px 15px rgb(0 0 0 / 0.3);
+    --orangeCard: rgba(252, 166, 31, 0.45);
+    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
 }
+
+ul{
+    list-style-type: none;
+}
+
+form{
+    width: 100%;
+    display: flex;
+  
+    flex-direction: column;
+    gap: 1rem;
+   
+}
+
+input[type="text"],input[type="email"] , input[type="password"],textarea{
+    width: 100%;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 2px solid var(--black);
+    background: transparent;
+    font-size: 1.1rem;
+    outline: none;
+    
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--orange);
+    font-weight: 800;
+    opacity: 0.5; /* Firefox */
+    font-size: 14px;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:var(--orange);
+    opacity: 0.5; /* Firefox */
+    font-size: 14px;
+    font-weight: 800;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:var(--orange);
+    opacity: 0.5; /* Firefox */
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  select{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  select>option{
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    
+  }
+
+
+  button{
+    background: black;
+    color: var(--blueCard);
+    padding:0.3rem;
+    border-radius: 15px;
+    width: 100%;
+    border: none;
+  }
+  button:hover{
+   
+    border: 1px solid var(--orange);
+    background: white;
+    color:var(--orange);
+    font-weight: bold;
+  }
+ 
+  .icon{
+    font-size: 2rem;
+  }
+
+  .icon:hover{
+   color: var(--orange);
+  
+  }
+
+  .container{
+    max-width: 1084px;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    padding: 8px;
+    margin: auto;
+  }
+
+  @media screen and (max-width:640px) {
+    .container{
+      max-width: 640px;
+    }
+  }
+
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,0 +1,32 @@
+.support{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.support>h1{
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.support>h2{
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 2rem 0;
+
+}
+
+.contact-form{
+    width: 50%;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width:640px) {
+    .contact-form{
+        width: 80%;
+    }
+  }

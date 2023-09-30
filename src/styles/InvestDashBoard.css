@@ -1,0 +1,36 @@
+.invest-tab{
+    
+    width:100%;
+
+    align-items: center;
+   
+}
+
+
+.investment-enabled{
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+   
+
+}
+
+.investment-details{
+   padding: 1rem 4rem;
+}
+.investment-details>h1{
+   padding:10px;
+}
+
+.investent-detail{
+    padding: 2rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border:1px sandybrown;
+    gap:10px;
+    box-shadow: var(--boxShadow);
+    margin-top: 20px;
+
+}

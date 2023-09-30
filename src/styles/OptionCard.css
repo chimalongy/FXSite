@@ -1,0 +1,22 @@
+.optionCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.icon>*{
+    font-size: 3rem;
+    font-weight: bold;
+    color: inherit;
+}
+
+.optionCard>p{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: inherit;
+}
+
+

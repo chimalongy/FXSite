@@ -1,0 +1,32 @@
+.dash-board-card{
+    flex: 1;
+    box-shadow: var(--boxShadow);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dash-board-card>div>*{
+    font-size: 2rem;
+}
+
+.dash-board-card>h3{
+    font-weight: 800;
+}
+.dash-board-card>h1{
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.dash-board-card-container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+
+}

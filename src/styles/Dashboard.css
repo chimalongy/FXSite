@@ -1,0 +1,207 @@
+.vertical-tab-menu {
+    display: flex;
+}
+
+.tab-menu {
+    width: 20%;
+    /* Adjust the width of the sidebar as needed */
+    background-color: #333;
+    /* Sidebar background color */
+    color: white;
+    /* Text color */
+    position: fixed;
+    /* Fix the tab menu */
+    height: 100vh;
+    /* Set the height to 100% of the viewport height */
+    overflow-y: auto;
+    /* Allow vertical scrolling if the content is taller than the viewport */
+    padding: 5px;
+}
+.tab-logo-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding:10px;
+    align-items: center;
+   
+}
+.tab-logo-container>h1{
+    color:white;
+    font-size: 26px ;
+    width: 75%;
+   
+}
+
+.tab-logo-container>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 10px;
+}
+.tab-logo-container>div>*{
+    color: white ;
+}
+.tab-logo-container>div>h3{
+    font-size: 10px ;
+    text-align: center;
+}
+
+.tab-item {
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+
+}
+
+.tab-item:hover {
+    background-color: #555; 
+}
+
+.tab-item.active {
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 10vh;
+}
+
+.menu-item {
+    color: white;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+
+}
+
+.menu-item>.icon {
+    color: white;
+    font-size: 22px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.tab-content {
+    flex-grow: 1;
+    /* Allow the content to grow and fill the remaining space */
+
+    background-color: #f5f5f5;
+    /* Content background color */
+    margin-left: 20%;
+    /* Add margin to the content area to account for the fixed tab menu */
+    overflow-y: auto;
+    /* Allow vertical scrolling if the content is taller than the viewport */
+}
+
+.tab-content-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tab-content-item-header {
+    
+    background-color: #f5f5f5;
+    padding: 20px 10px;
+}
+
+.tab-content-item-body {
+    
+    padding: 30px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:640px) {
+    .vertical-tab-menu {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .tab-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        overflow: hidden;
+        gap: 2rem;
+        position: relative;
+    }
+
+    .tab-menu-row{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between; 
+    }
+
+    .tab-menu-column{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .tab-menu-container {
+        padding: 0;
+        width: 100%;
+        display: none;
+   }
+    .tab-menu-container-visible {
+        padding: 0;
+        width: 100%;
+        display:block;
+   }
+
+
+
+   .tab-item {
+        padding: 0;
+        width: 100%;
+        display: block;
+       
+   }
+    
+
+   
+
+   .menu-item {
+    color: white;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    text-align: justify;
+    width: 100%;
+
+}
+  
+    .hamburger{
+        display:inherit;
+    }
+
+    .tab-content {
+       display: block;
+        background-color: #f5f5f5;
+        margin-left: 0;
+        overflow-y: auto;
+    }
+
+
+}

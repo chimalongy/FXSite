@@ -1,0 +1,18 @@
+.sidebar-container-off{
+    width: 50%;
+    justify-content: center;
+    border: 2px solid white;
+    position: absolute;
+    top: 90px;
+    right: -100%;
+    z-index: 100000;
+}
+.sidebar-container-on{
+    width: 50%;
+    justify-content: center;
+    border: 2px solid white;
+    position: absolute;
+    top: 90px;
+    right:0;
+    z-index: 100000;
+}

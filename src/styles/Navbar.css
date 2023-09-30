@@ -1,0 +1,55 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    height: 90px;
+    background-color: yellow;
+}
+
+.logo>h1 {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1rem
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width:640px) {
+    .navbar-container {
+        z-index: 1000;
+        position: relative;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        border: 2px solid white;
+        position: absolute;
+        top: 90px;
+        left: -100%;
+
+        transition: 0.3s;
+    }
+
+    .active {
+        left: 0;
+        position: absolute;
+        height: calc(100vh - 90px);
+        top: 90px;
+
+    }
+
+    .hamburger {
+        display: initial;
+    }
+}

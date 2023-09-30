@@ -1,0 +1,95 @@
+/* PlansPage.css */
+
+.plans-page {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+  }
+
+  .plans-page>h1{
+    font-size: 2rem;
+    padding: 2rem;
+  }
+  .plans-container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 3rem;
+   
+  }
+  
+  .plan {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    border-top: 6px solid blue;
+    width: calc((100% - 2rem) / 3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .plan h2 {
+    font-size: 24px;
+   
+  }
+  
+  
+  .price-container{
+    line-height: 1;
+  }
+  .price-container>.startprice{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .price-container>.endprice{
+    font-size: 15px;
+    font-weight: bold;
+    color: #007BFF;
+  }
+
+
+  .plan>ul li::before {
+    content: "✓"; /* Unicode character representing a checkmark */
+    display: inline-block;
+    width: 20px; /* Adjust the width as needed for spacing */
+    text-align: center;
+    margin-right: 5px; /* Adjust the margin as needed for spacing */
+    color:  #007BFF; /* Adjust the color as desired */
+    font-weight: bold; /* Make it bold if needed */
+    font-size: 1.2em; /* Adjust the font size as needed */
+  }
+  
+  .purchase-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width:60%;
+    margin:auto;
+    margin: 2rem;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .plan {
+      width: 80%;
+    }
+    .plans-container{
+      width: 100%;
+      flex-direction: column;
+      padding: 2rem;
+      align-items: center;
+    }
+  }
+  
