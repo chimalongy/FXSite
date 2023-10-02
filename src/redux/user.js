@@ -12,8 +12,12 @@ const initialData={
     totalProfit: 0,
     withdrawalableAmount: 0,
     accountBalance:0,
-    cart:[],
-    transactions:[]
+    transactions:"",
+    firstBillingEnabled:"FALSE",
+    ctry:"",
+    st:"",
+    addr:"",
+    accountEnabled:"",
 }
 
 export const userSlice = createSlice({
@@ -36,5 +40,5 @@ export const userSlice = createSlice({
 
 })
 
-export const { login, logout, addToCart } = userSlice.actions
-export default userSlice.reducer
+export const { login, logout, addToCart } = userSlice.actions;
+export default userSlice.reducer;

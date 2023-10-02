@@ -8,6 +8,8 @@ import { logout } from '../redux/user';
 import { generallogout } from '../redux/generalLoginCheck';
 
 import { useDispatch, useSelector } from 'react-redux'
+import DashBoardTransactions from '../components/DashBoardTransactions';
+import DashBoardSettingsTab from '../components/DashBoardSettingsTab';
 
 export default function DashBoard() {
     const dispatch = useDispatch();
@@ -89,7 +91,9 @@ export default function DashBoard() {
             tableIcon: <i class="fa-regular fa-calendar-days icon"></i>,
             content: <div className='tab-content-item'>
                 <h1 className='tab-content-item-header'>Transactions</h1>
-                <div className='tab-content-item-body'></div>
+                <div className='tab-content-item-body'>
+                    <DashBoardTransactions/>
+                </div>
             </div>
         },
         {
@@ -98,7 +102,7 @@ export default function DashBoard() {
             tableIcon: <i class="fa-solid fa-sliders icon"></i>,
             content: <div className='tab-content-item'>
                 <h1 className='tab-content-item-header'>Account Settings</h1>
-                <div className='tab-content-item-body'></div>
+                <div className='tab-content-item-body'><DashBoardSettingsTab></DashBoardSettingsTab></div>
             </div>
         }
     ];

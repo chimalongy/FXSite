@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import dataFetch from "./modules/dataFetch";
 import { login } from '../redux/user';
 import { generallogin } from '../redux/generalLoginCheck';
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import LogComponent from './LogComponent';
 
 
 const Loginform = (props) => {
-const dispatch = useDispatch();
- const [LoginErrorMessage, setLoginErrorMessage]=useState("");
+  const dispatch = useDispatch();
+  const [LoginErrorMessage, setLoginErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     email: 'me.chimaobi@gmail.com',
     password: 'chimsyboy'
@@ -52,27 +52,29 @@ const dispatch = useDispatch();
     event.preventDefault();
 
     if (validateForm()) {
-     // console.log('Login data:', formData);
+      // console.log('Login data:', formData);
       // You can perform further actions here, such as sending the data to a server
-      let fData=new FormData();
-      fData.append("email",formData.email);
-      fData.append("password",formData.password);
-      fData.append("login","yes");
+      let fData = new FormData();
+      fData.append("email", formData.email);
+      fData.append("password", formData.password);
+      fData.append("login", "yes");
 
       const url = "http://localhost/MusaFX/engine.php";
-        dataFetch(url, fData)
-          .then(data => {
+      dataFetch(url, fData)
+        .then(data => {
 
-            
-            if (data == "userdoesnotexist") {
-              setLoginErrorMessage("Email not registered. Please create and account");
-            }
-            else if (data == "incorrectpassword") {
-              setLoginErrorMessage("Hi, your password is incorrect");
-            }
-            else{
-           let userData=JSON.parse(data);
-                  // console.log(data)
+
+          if (data == "userdoesnotexist") {
+            setLoginErrorMessage("Email not registered. Please create and account");
+          }
+          else if (data == "incorrectpassword") {
+            setLoginErrorMessage("Hi, your password is incorrect");
+          }
+          else {
+            let userData = JSON.parse(data);
+            //  console.log(data)
+
+            if ((userData[16] == "TRUE") &&(userData[6]=='FALSE')) {
               dispatch(
                 login(
                   {
@@ -81,24 +83,69 @@ const dispatch = useDispatch();
                     lastName: userData[1],
                     email: userData[2],
                     password: userData[3],
+
                     investmentDate: userData[4],
                     investmentPlan: userData[5],
                     investmentEnabled: userData[6],
                     investmentAmount: userData[7],
+
                     totalProfit: userData[8],
                     withdrawalableAmount: userData[9],
                     accountBalance: userData[10],
+                    
+                   
+
+              
+
+                    firstBillingEnabled: userData[12],
+                    ctry: userData[13],
+                    st: userData[14],
+                    addr: userData[15],
+                    AccountEnabled: userData[16],
 
                   }
                 )
-               )
-               dispatch(generallogin());
+              )
+
+              dispatch(generallogin());
             }
-           
-          })
-          .catch(error => {
-            console.error(error);
-          });
+            else if ((userData[16] == "TRUE") &&(userData[6]=='TRUE')) {
+              dispatch(
+                login(
+                  {
+                    firstName: userData[0],
+                    lastName: userData[1],
+                    email: userData[2],
+                    password: userData[3],
+
+                    investmentDate: userData[4],
+                    investmentPlan: userData[5],
+                    investmentEnabled: userData[6],
+                    investmentAmount: userData[7],
+
+                    totalProfit: userData[8],
+                    withdrawalableAmount: userData[9],
+                    accountBalance: userData[10],
+                    transactions:userData[11],
+                    firstBillingEnabled: userData[12],
+                    ctry: userData[13],
+                    st: userData[14],
+                    addr: userData[15],
+                    accountEnabled: userData[16],
+                  }
+                )
+              )
+              dispatch(generallogin());
+            }
+            else {
+              setLoginErrorMessage("This account has been restricted for violating our terms and condition. \n Please contact support.")
+            }
+          }
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
 
 
     }
@@ -106,13 +153,13 @@ const dispatch = useDispatch();
 
   return (
     <div style={{}}>
-      <h2 style={{textAlign:"center"}}>Login</h2>
+      <h2 style={{ textAlign: "center" }}>Login</h2>
 
-        <p>{LoginErrorMessage}</p>
+      <p>{LoginErrorMessage}</p>
 
       <form onSubmit={handleLogin}>
         <div>
-         
+
           <input
             type="email"
             id="email"
@@ -125,7 +172,7 @@ const dispatch = useDispatch();
           <span className="error">{formErrors.email}</span>
         </div>
         <div>
-          
+
           <input
             type="password"
             id="password"
@@ -140,13 +187,13 @@ const dispatch = useDispatch();
         <button type="submit">Sign in</button>
       </form>
       <div>
-        <p style={{textAlign:"center"}} onClick={props.showReset}><a>Forgot Password?</a></p>
+        <p style={{ textAlign: "center" }} onClick={props.showReset}><a>Forgot Password?</a></p>
       </div>
       <div>
-      <p style={{textAlign:"center"}} onClick={props.showCreatAccount}><a>Create an Account</a></p>
-        
+        <p style={{ textAlign: "center" }} onClick={props.showCreatAccount}><a>Create an Account</a></p>
+
       </div>
-    
+
     </div>
   );
 };

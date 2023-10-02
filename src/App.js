@@ -33,21 +33,24 @@ function App() {
      <Router>
       {/* <DashBoard/> */}
      <div className="App" >
-    {/* {generalLoginCheck.toString()}<br/>
+     {/* {generalLoginCheck.toString()}<br/>
     {selectedPlan.toString()}<br/>
     {user.firstname}<br/>
     {user.lastname}<br/>
     {user.email}<br/>
-    {user.password}<br/>
+    
     {user.investmentDate}<br/>
     {user.investmentPlan}<br/>
     {user.investmentEnabled}<br/>
     {user.investmentAmount}<br/>
     {user.totalProfit}<br/>
     {user.withdrawalableAmount}<br/>
-    {user.accountBalance}<br/> */}
-    
-    
+    {user.accountBalance}<br/>  */}
+    {user.password}<br/>
+    {user.country}<br/>
+    {user.state}<br/>
+    {user.address}<br/>
+    {user.investmentDate}<br/>
 
 
         
